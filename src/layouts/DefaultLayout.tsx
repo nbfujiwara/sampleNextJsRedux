@@ -67,7 +67,6 @@ export default function DefaultLayout({ children }: LayoutParam) {
                 onClick={toggleDrawer}
                 sx={{
                   marginRight: '36px',
-                  ...(openDrawer && { display: 'none' }),
                 }}
               >
                 <MenuIcon />
