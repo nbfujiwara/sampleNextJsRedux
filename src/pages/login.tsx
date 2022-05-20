@@ -4,8 +4,9 @@ import { Box, Button, Container, TextField } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import basicSlice from '@/store/basic/slice'
 import { useRouter } from 'next/router'
+import AppUtil from '@/libs/AppUtil'
 
-const Login: NextPageWithLayout = () => {
+const LoginPage: NextPageWithLayout = () => {
   const dispatch = useDispatch()
   const router = useRouter()
 
@@ -18,6 +19,7 @@ const Login: NextPageWithLayout = () => {
       }),
     )
     dispatch(basicSlice.actions.setLogon(true))
+    AppUtil.setLoggedIn(true)
     return router.push('/')
   }
 
@@ -53,5 +55,5 @@ const Login: NextPageWithLayout = () => {
   )
 }
 
-Login.getLayout = (page) => <PlaneLayout>{page}</PlaneLayout>
-export default Login
+LoginPage.getLayout = (page) => <PlaneLayout>{page}</PlaneLayout>
+export default LoginPage
